@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<style>
+		    *{padding: 0;margin: 0;}
+		    body{
+		        background:#000;
+		        width: 100%;
+		        height: 100%;
+		        overflow:hidden;
+		    }
+		    ul,li{
+		    		list-style: none;
+		    }
+		    .topPic{
+		    		width: 100%;
+		    		height: 80px;
+		    		text-align: center;
+		    }
+		    .text{
+		    		width: 100%;
+		    		height: 100%;
+		    		position: absolute;
+		    		left: 0;
+		    		top: 0;
+		    		background: rgba(255,255,255,0.28);
+		    }
+		    .text p {
+		    		text-align: center;
+		    		font-size: 14px;
+		    		line-height: 24px;
+		    }
+		    .text p:first-child{
+		    		margin-top: 120px;
+		    }
+		    .topPic img{
+		    		border: 0;
+		    		width: 80px;
+		    		height: 80px;
+		    		animation: routate 5s;
+				-webkit-animation: routate 5s infinite alternate;
+		    }
+		    @keyframes routate{
+		    		0{transform-origin: center top; transform: rotate(-30deg); transform-style: preserve-3d;}
+		    		25%{transform-origin: center top; transform: rotate(30deg); transform-style: preserve-3d;}
+		    		50%{transform-origin: center top; transform: rotate(-30deg); transform-style: preserve-3d;}
+		    		75%{transform-origin: center top; transform: rotate(30deg); transform-style: preserve-3d;}
+		    		100%{transform-origin: center top; transform: rotate(-30deg); transform-style: preserve-3d;}
+		    }
+		    .input{
+		    	 position: absolute;
+		    	 width: 80%;
+		    	 height: 32px;
+		    	 border: 1px solid #999;
+		    	 border-radius: 4px;
+		    	 bottom: 20px;
+		    	 right: 10%;
+		    	 line-height: 32px;
+		    }
+		    .input .input-title{
+		    		width: 70px;
+		    		height: 31px;
+		    		display: inline-block;
+		    		text-indent: 10px;
+		    		color: #ccc;
+		    		font-size: 14px;
+		    		background: #666;
+		    }
+		    .input .input-title span{
+		    		width: 12px;
+		    		height: 12px;
+		    		display: inline-block;
+		    		border-radius: 2px;
+		    		vertical-align: middle;
+		    		margin-left: 8px;
+		    }
+		    .input-txt span{
+		    		background: #ff0000;
+		    }
+		    .input-content{
+		    		border: 0;
+		    		width: calc(100% - 140px);
+		    		background: none;
+		    		outline: none;
+		    		color: #CCCCCC;
+		    }
+		    .color-list{
+		    		position: absolute;
+		    		bottom: 33px;
+		    		left: 0;
+		    		display: none;
+		    }
+		    .send{
+		    		width: 60px;
+		    		border-radius: 0 4px 4px 0;
+		    		background: #666666;
+		    		text-align: center;
+		    		line-height: 31px;
+		    		color: #CCCCCC;
+		    		display: inline-block;
+		    		position: absolute;
+		    		top: 1px;
+		    		right: 1px;
+		    		font-size: 14px;
+		    }
+		    audio{
+		    		opacity: 0;
+		    }
+		    .tips{
+		    		line-height: 20px;
+		    		position: absolute;
+		    		left: 0;
+		    		text-align: center;
+		    		width: 100%;
+		    		top: -25px;
+		    		color: #666666;
+		    }
+		</style>
+		<script src="js/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="flame"></div>
+		<div class="topPic">
+			<img src="img/xx.png" />
+		</div>
+		<div class="text">
+			<p style="color:#409EFF">静，我喜欢你</p>
+			<p style="color:#E6A23C">我做这个不是为了跟你置气</p>
+			<p style="color:#F56C6C">我只是觉得没把你的话放心上，心里难受</p>
+			<p style="color:#67C23A">你可以原谅我吗？</p>
+			<p style="color:#FFA340">也许你不信</p>
+			<p style="color:#ffff00">可我是认真的，因为这么多年</p>
+			<p style="color:#00ffff">我已经知道什么是好，谁对我才重要</p>
+			<p style="color:#00ff00">曾经的我，也有过不切实际的想法</p>
+			<p style="color:#FFA340">但，现在的我只想找个人好好过完下半辈子</p>
+			<p style="color:#FF40FC">我真的希望这个人就是你</p>
+			<p style="color:#409EFF">真的</p>
+		</div>
+		<div class="input">
+			<span class="input-title input-txt">颜色<span></span></span>
+			<input type="text" class="input-content" />
+			<ul class="color-list">
+				<li data-color = "#ff0000"><span class="input-title">颜色<span style="background: #ff0000;"></span></span></li>
+				<li data-color = "#ffff00"><span class="input-title">颜色<span style="background: #ffff00;"></span></span></li>
+				<li data-color = "#00ffff"><span class="input-title">颜色<span style="background: #00ffff;"></span></span></li>
+				<li data-color = "#00ff00"><span class="input-title">颜色<span style="background: #00ff00;"></span></span></li>
+				<li data-color = "#FFA340"><span class="input-title">颜色<span style="background: #FFA340;"></span></span></li>
+				<li data-color = "#FF40FC"><span class="input-title">颜色<span style="background: #FF40FC;"></span></span></li>
+				<li data-color = "#0000ff"><span class="input-title">颜色<span style="background: #0000ff;"></span></span></li>
+			</ul>
+			<span class="send">发布</span>
+			<p class="tips">按回车或者点击发布重新输入</p>
+		</div>
+		<audio controls="controls" height="100" width="100" loop="loop" autoplay="autoplay">
+		  	<source src="1.mp3" type="audio/mp3" />
+		  	<source src="1.ogg" type="audio/ogg" />
+			<embed height="100" width="100" src="1.mp3" />
+		</audio>
+		<script src="js/xuehua.js"></script>
+		<script>
+			var colorFlag = true;
+			var color = '';
+			var flag = true;
+			$('.input-txt').click(function(ev){
+				if(colorFlag){
+					$('.color-list').css('display','inline-block')
+				}else{
+					$('.color-list').css('display','none')
+				}
+				colorFlag = !colorFlag
+				return false;
+			});
+			$('.color-list li').click(function(ev){
+				console.log($(this).attr('data-color'))
+				$('.color-list').css('display','none')
+				colorFlag = !colorFlag
+				color = $(this).attr('data-color');
+				$('.input-txt').find('span').css('background',color)
+				return false;
+			})
+			$(document).keypress(function(e) {  
+		    		// 回车键事件  
+		       	if(e.which == 13) { 
+		       		send()
+		       	}
+		   });
+		   $('.send').click(function(){
+		   		send();
+		   })
+		   function send(){
+		   		color = color != '' ? color : '#ff0000'
+	       		var txt = $('.input-content').val();
+	       		var html = '<p style="color:'+color+'">'+txt+'</p>'
+	       		if(flag){
+	       			$('.text').empty();
+	       			flag = false;
+	       		}
+	       		if(txt != ''){
+	       			$('.text').append(html)
+	       			$('.input-content').val('');
+	       		}
+		   }
+		</script>
+	</body>
+</html>
